@@ -112,7 +112,7 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
               <th className="border-r border-white w-[35px]">KG</th>
               <th className="border-r border-white w-[35px]">SÉRIES</th>
               <th className="border-r border-white w-[35px]">REPS</th>
-              <th className="w-[110px]">OBS</th>
+              <th className="w-[160px]">OBS</th>
             </tr>
           </thead>
           <tbody>
