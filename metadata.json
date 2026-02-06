@@ -1,0 +1,5 @@
+{
+  "name": "MI Fitness Style - Workout Sheet Generator",
+  "description": "A professional tool for fitness trainers to generate, customize, and print high-quality A4 workout sheets. Features AI-powered workout generation using Gemini.",
+  "requestFramePermissions": []
+}
