@@ -2,10 +2,9 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { WorkoutSheetData } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-
 export const generateWorkoutAI = async (goal: string, studentName: string): Promise<Partial<WorkoutSheetData> | null> => {
   try {
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: `Generate a comprehensive gym workout for the goal: "${goal}". 
