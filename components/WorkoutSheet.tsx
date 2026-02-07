@@ -35,7 +35,9 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
   };
 
   const isSecondPage = data.trainingSplit === 'B';
-  const groupConfig = isSecondPage ? [8, 5, 5, 6] : [8, 8, 8];
+  // Ficha A: Peito(6), Costas(8), Ombro(6), Abs(4)
+  // Ficha B: Pernas(8), Bíceps(5), Tríceps(5), Glúteo(6)
+  const groupConfig = isSecondPage ? [8, 5, 5, 6] : [6, 8, 6, 4];
 
   const getRowStartIndex = (groupIdx: number) => {
     return groupConfig.slice(0, groupIdx).reduce((acc, curr) => acc + curr, 0);
