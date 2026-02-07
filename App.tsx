@@ -141,7 +141,10 @@ const App: React.FC = () => {
           <button onClick={clearAll} className="bg-red-950/20 text-red-500 px-6 py-3 rounded-2xl text-xs font-black border border-red-900/30 transition-all uppercase hover:bg-red-900/40">
             Limpar
           </button>
-          <button onClick={() => window.print()} className="bg-white text-black px-8 py-3 rounded-2xl text-sm font-black shadow-2xl flex items-center gap-2 hover:bg-gray-100 active:scale-95 transition-all">
+          <button 
+            onClick={() => window.print()} 
+            className="bg-[#fbbf24] hover:bg-yellow-500 text-black px-8 py-3 rounded-2xl text-sm font-black shadow-[0_10px_30px_rgba(251,191,36,0.25)] flex items-center gap-2 active:scale-95 transition-all"
+          >
             🖨️ IMPRIMIR
           </button>
         </div>

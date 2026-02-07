@@ -7,10 +7,13 @@
     <title>Gerador de Ficha de Treino - MI Fitness Style</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      * {
+      /* Força a impressão de cores de fundo em todos os navegadores */
+      html, body, * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        color-adjust: exact !important;
       }
+
       @media print {
         @page {
           size: A4 landscape;
@@ -40,7 +43,13 @@
           padding: 4mm !important;
           display: flex !important;
         }
+        /* Garante que elementos coloridos mantenham suas cores */
+        .bg-black { background-color: black !important; }
+        .bg-\[#FFD700\] { background-color: #FFD700 !important; }
+        .bg-\[#fbbf24\] { background-color: #fbbf24 !important; }
+        .text-\[#FFD700\] { color: #FFD700 !important; }
       }
+
       ::-webkit-scrollbar {
         width: 8px;
       }
