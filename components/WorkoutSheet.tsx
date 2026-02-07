@@ -48,13 +48,13 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
         {/* LOGO AREA */}
         <div 
           onClick={onLogoClick}
-          className="w-[65px] h-[65px] bg-black text-[#FFD700] flex items-center justify-center text-[9px] text-center cursor-pointer border-2 border-dashed border-[#FFD700] overflow-hidden shrink-0"
-          style={{ backgroundColor: 'black', color: '#FFD700' }}
+          className="w-[65px] h-[65px] bg-white text-black flex items-center justify-center text-[9px] text-center cursor-pointer border-2 border-dashed border-gray-300 overflow-hidden shrink-0"
+          style={{ backgroundColor: 'white', color: 'black' }}
         >
           {logoUrl ? (
             <img src={logoUrl} alt="Logo" className="w-full h-full object-contain" />
           ) : (
-            <span>CLIQUE<br/>P/ LOGO</span>
+            <span className="font-bold">CLIQUE<br/>P/ LOGO</span>
           )}
         </div>
 
