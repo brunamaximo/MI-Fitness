@@ -45,11 +45,10 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
     <div className="p-[4px] flex flex-col h-full bg-white text-black overflow-hidden box-border border-[3px] border-black">
       {/* HEADER */}
       <div className="flex gap-[8px] mb-[4px] items-stretch shrink-0 h-[70px] border-b-[3px] border-black pb-[4px]">
-        {/* LOGO AREA */}
+        {/* LOGO AREA - Background white to prevent black borders on transparent PNGs */}
         <div 
           onClick={onLogoClick}
           className="w-[65px] h-[65px] bg-white text-black flex items-center justify-center text-[9px] text-center cursor-pointer border-2 border-dashed border-gray-300 overflow-hidden shrink-0"
-          style={{ backgroundColor: 'white', color: 'black' }}
         >
           {logoUrl ? (
             <img src={logoUrl} alt="Logo" className="w-full h-full object-contain" />
@@ -62,7 +61,6 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
         <div className="flex-grow flex flex-col justify-between overflow-hidden">
           <div 
             className="bg-black text-[#FFD700] text-center font-black py-[3px] text-[15px] tracking-widest uppercase italic"
-            style={{ backgroundColor: 'black', color: '#FFD700' }}
           >
             FICHA DE TREINO - PARTE {data.trainingSplit}
           </div>
@@ -93,7 +91,6 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
       {/* WEEK DAYS */}
       <div 
         className="bg-[#FFD700] border border-black flex justify-between items-center px-[4px] py-[2px] mb-[4px] shrink-0 font-bold text-[9px]"
-        style={{ backgroundColor: '#FFD700' }}
       >
         {WEEK_DAYS_LABELS.map(day => (
           <label key={day.id} className="flex items-center gap-[2px] cursor-pointer">
@@ -112,7 +109,7 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
       <div className="flex-grow border border-black bg-white overflow-hidden">
         <table className="w-full border-collapse table-fixed h-full text-[10px]">
           <thead>
-            <tr className="bg-black text-[#FFD700] font-black uppercase text-center text-[8px] h-[20px]" style={{ backgroundColor: 'black', color: '#FFD700' }}>
+            <tr className="bg-black text-[#FFD700] font-black uppercase text-center text-[8px] h-[20px]">
               <th className="border-r border-white w-[55px]">GRUPO</th>
               <th className="border-r border-white w-[22px]">Nº</th>
               <th className="border-r border-white">EXERCÍCIO</th>
@@ -214,9 +211,9 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
       </div>
 
       {/* FOOTER */}
-      <div className="text-[8px] mt-[2px] shrink-0 flex justify-between font-black italic text-zinc-400 px-[2px]">
-        <span>MI FITNESS STYLE</span>
-        <span className="uppercase opacity-40">MUDANÇA INTERNA • RESULTADO EXTERNO</span>
+      <div className="text-[8px] mt-[2px] shrink-0 flex justify-between items-baseline font-black italic text-zinc-400 px-[2px]">
+        <span>Academia MI Fitness</span>
+        <span className="uppercase opacity-40">Performance & Resultado</span>
       </div>
     </div>
   );

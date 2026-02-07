@@ -151,7 +151,7 @@ const App: React.FC = () => {
       </header>
 
       {/* PRINT AREA - 297mm x 210mm (Landscape) */}
-      <div className="print-area w-[297mm] h-[210mm] bg-white shadow-2xl flex p-[4mm] gap-[4mm] box-border overflow-hidden origin-top scale-[0.35] sm:scale-[0.5] md:scale-[0.6] lg:scale-[0.8] xl:scale-100 border border-zinc-200">
+      <div className="print-area w-[297mm] h-[210mm] bg-white shadow-2xl flex p-[4mm] gap-[4mm] box-border overflow-hidden origin-top scale-[0.35] sm:scale-[0.5] md:scale-[0.6] lg:scale-[0.8] xl:scale-100 border border-zinc-200 relative">
         <div className="flex-1 h-full">
           <WorkoutSheet
             data={state.sheet1}
@@ -160,6 +160,14 @@ const App: React.FC = () => {
             onLogoClick={() => fileInputRef.current?.click()}
           />
         </div>
+
+        {/* Vertical Credit Text in the fold - Centered, very small and discrete */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none flex items-center justify-center">
+          <span className="text-zinc-300 text-[5px] font-medium uppercase rotate-90 whitespace-nowrap tracking-[0.2em] block opacity-40">
+            Desenvolvido por Artes da Lorena
+          </span>
+        </div>
+
         <div className="flex-1 h-full">
           <WorkoutSheet
             data={state.sheet2}
@@ -171,7 +179,7 @@ const App: React.FC = () => {
       </div>
 
       <footer className="no-print mt-10 mb-10 text-zinc-700 text-[10px] font-black uppercase tracking-[0.4em]">
-        ESTILO MI FITNESS • PERFORMANCE & RESULTADO
+        Academia MI Fitness - Performance & Resultado
       </footer>
     </div>
   );
