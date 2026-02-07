@@ -49,6 +49,7 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
         <div 
           onClick={onLogoClick}
           className="w-[65px] h-[65px] bg-black text-[#FFD700] flex items-center justify-center text-[9px] text-center cursor-pointer border-2 border-dashed border-[#FFD700] overflow-hidden shrink-0"
+          style={{ backgroundColor: 'black', color: '#FFD700' }}
         >
           {logoUrl ? (
             <img src={logoUrl} alt="Logo" className="w-full h-full object-contain" />
@@ -59,7 +60,10 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
 
         {/* HEADER FIELDS */}
         <div className="flex-grow flex flex-col justify-between overflow-hidden">
-          <div className="bg-black text-[#FFD700] text-center font-black py-[3px] text-[15px] tracking-widest uppercase italic">
+          <div 
+            className="bg-black text-[#FFD700] text-center font-black py-[3px] text-[15px] tracking-widest uppercase italic"
+            style={{ backgroundColor: 'black', color: '#FFD700' }}
+          >
             FICHA DE TREINO - PARTE {data.trainingSplit}
           </div>
           <div className="grid grid-cols-12 gap-[5px] items-end">
@@ -87,7 +91,10 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
       </div>
 
       {/* WEEK DAYS */}
-      <div className="bg-[#FFD700] border border-black flex justify-between items-center px-[4px] py-[2px] mb-[4px] shrink-0 font-bold text-[9px]">
+      <div 
+        className="bg-[#FFD700] border border-black flex justify-between items-center px-[4px] py-[2px] mb-[4px] shrink-0 font-bold text-[9px]"
+        style={{ backgroundColor: '#FFD700' }}
+      >
         {WEEK_DAYS_LABELS.map(day => (
           <label key={day.id} className="flex items-center gap-[2px] cursor-pointer">
             <input 
@@ -105,13 +112,13 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
       <div className="flex-grow border border-black bg-white overflow-hidden">
         <table className="w-full border-collapse table-fixed h-full text-[10px]">
           <thead>
-            <tr className="bg-black text-[#FFD700] font-black uppercase text-center text-[8px] h-[20px]">
+            <tr className="bg-black text-[#FFD700] font-black uppercase text-center text-[8px] h-[20px]" style={{ backgroundColor: 'black', color: '#FFD700' }}>
               <th className="border-r border-white w-[55px]">GRUPO</th>
               <th className="border-r border-white w-[22px]">Nº</th>
               <th className="border-r border-white">EXERCÍCIO</th>
-              <th className="border-r border-white w-[35px]">KG</th>
+              <th className="border-r border-white w-[30px]">KG</th>
               <th className="border-r border-white w-[35px]">SÉRIES</th>
-              <th className="border-r border-white w-[35px]">REPS</th>
+              <th className="border-r border-white w-[30px]">REPS</th>
               <th className="w-[220px]">OBS</th>
             </tr>
           </thead>
