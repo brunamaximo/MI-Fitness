@@ -45,10 +45,12 @@ const WorkoutSheet: React.FC<WorkoutSheetProps> = ({ data, onUpdate, logoUrl, on
     <div className="p-[4px] flex flex-col h-full bg-white text-black overflow-hidden box-border border-[3px] border-black">
       {/* HEADER */}
       <div className="flex gap-[8px] mb-[4px] items-stretch shrink-0 h-[70px] border-b-[3px] border-black pb-[4px]">
-        {/* LOGO AREA - Background white to prevent black borders on transparent PNGs */}
+        {/* LOGO AREA - Background white. Border is removed when logo exists. */}
         <div 
           onClick={onLogoClick}
-          className="w-[65px] h-[65px] bg-white text-black flex items-center justify-center text-[9px] text-center cursor-pointer border-2 border-dashed border-gray-300 overflow-hidden shrink-0"
+          className={`w-[65px] h-[65px] bg-white text-black flex items-center justify-center text-[9px] text-center cursor-pointer overflow-hidden shrink-0 ${
+            logoUrl ? 'border-none' : 'border-2 border-dashed border-gray-300'
+          }`}
         >
           {logoUrl ? (
             <img src={logoUrl} alt="Logo" className="w-full h-full object-contain" />
